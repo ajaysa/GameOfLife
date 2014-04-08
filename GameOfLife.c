@@ -31,7 +31,7 @@ int main()
 	{
 		for(j=0; j<MaxY; j++)
 		{
-			if ( rand()%13 == 0 )
+			if ( rand()%11 == 0 )
 				board[i][j] = '1';
 			else
 				board[i][j] = '0';
@@ -134,6 +134,8 @@ int main()
 				board[i][j] = board_copy[i][j];
 				if ( board[i][j] == '1' )
 					mvprintw(i, j, "%c",body);
+				else
+					mvprintw(i, j, " ");
 			}
 		}
 
