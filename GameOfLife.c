@@ -31,7 +31,7 @@ int main()
 	{
 		for(j=0; j<MaxY; j++)
 		{
-			if ( rand()%11 == 0 )
+			if ( rand()%2 == 0 )
 				board[i][j] = '1';
 			else
 				board[i][j] = '0';
@@ -164,6 +164,16 @@ int main()
 
 	refresh();
 	endwin();	/* End curses mode */
+
+	// Release memory
+	for(i=0; i<MaxX; i++)
+	{
+		free(board[i]);
+		free(board_copy[i]);
+	}
+
+	free(board);
+	free(board_copy);
 
 	return 0;
 }
